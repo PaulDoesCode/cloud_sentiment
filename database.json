@@ -1,0 +1,31 @@
+{
+  "Resources": {
+    "MyDynamoDB": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "TableName": "phs-dbtable-s1712745",
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "File",
+            "AttributeType": "S"
+          },
+          {
+            "AttributeName": "FileSentiment",
+            "AttributeType": "S"
+          }
+        ],
+        "BillingMode": "PAY_PER_REQUEST",
+        "KeySchema": [
+          {
+            "AttributeName": "File",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "FileSentiment",
+            "KeyType": "RANGE"
+          }
+        ]
+      }
+    }
+  }
+}
